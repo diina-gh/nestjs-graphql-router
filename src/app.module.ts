@@ -3,8 +3,7 @@ import { IntrospectAndCompose } from '@apollo/gateway';
 import { ApolloGatewayDriver, ApolloGatewayDriverConfig } from '@nestjs/apollo';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { GraphQLModule } from '@nestjs/graphql';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AUTH_SUBGRAPH, PRODUCT_SUBGRAPH } from './_commons/dotenv';
 
 @Module({
   imports: [
@@ -20,14 +19,14 @@ import { AppService } from './app.service';
       gateway: {
         supergraphSdl: new IntrospectAndCompose({
           subgraphs: [
-            { name: 'auth', url: 'http://localhost:4001/graphql' },
-            { name: 'product', url: 'http://localhost:4002/graphql' },
+            { name: 'auth', url: AUTH_SUBGRAPH },
+            { name: 'product', url: PRODUCT_SUBGRAPH },
           ],
         }),
       },
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
