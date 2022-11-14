@@ -1,3 +1,8 @@
+# nestjs-graphql-router
+
+An Appollo Federation app built on top of Nestjs allowing us to split monolithic GraphQL server into independent microservices. This codebase represents the gateway (router) and serves as the entry point to our project. Other graphql subgraphs which compose this supergraph are available in my profile.
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
